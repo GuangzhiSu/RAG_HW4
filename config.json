@@ -1,0 +1,45 @@
+{
+  "generator": {
+    "model": "us.meta.llama3-1-8b-instruct-v1:0",
+    "model_name": "Llama 3.1 8B Instruct",
+    "provider": "AI Gateway",
+    "base_url_env": "AI_GATEWAY_BASE_URL",
+    "api_key_env": "AI_GATEWAY_API_KEY",
+    "decoding": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 64,
+      "stop": null,
+      "seed": 697
+    },
+    "request": {
+      "timeout_s": 30,
+      "max_retries": 3
+    }
+  },
+  "data": {
+    "hf_dataset": "<username>/<corpusname>",
+    "corpus_csv": "data/corpus/corpus.csv",
+    "questions_dev": "data/questions/questions_dev.jsonl",
+    "questions_test": "data/questions/questions_test.jsonl"
+  },
+  "retrieval": {
+    "sparse": null,
+    "dense": null,
+    "fusion": null
+  },
+  "reranking": {
+    "context": null,
+    "answer": null
+  },
+  "capabilities": {
+    "multihop": null,
+    "abstain": null,
+    "cite": null
+  },
+  "improvements": {
+    "improve_1": null,
+    "improve_2": null
+  },
+  "seed": 697
+}
