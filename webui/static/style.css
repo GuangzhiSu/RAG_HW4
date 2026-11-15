@@ -112,13 +112,20 @@ button:focus-visible { outline: 1px solid var(--text); outline-offset: 2px; }
 
 .example:hover { color: var(--text); text-decoration-color: currentColor; }
 
-/* Answer and sources each sit in a box styled like the question input. */
+/* Answer and sources each sit in a box styled like the question input.
+   text-box trims the font's built-in space above the capitals and below the
+   baseline, so equal padding puts the text optically in the middle of the box
+   (supported in Safari 18.2+ and Chrome 133+; others get plain equal padding). */
 .box {
   margin: 0;
-  padding: 10px 12px;
+  padding: 16px 12px;
   border: 1px solid var(--line);
   border-radius: 6px;
+  text-box: trim-both cap alphabetic;
 }
+
+.box li { text-box: trim-both cap alphabetic; }
+#sources li + li { margin-top: 14px; }
 
 .label {
   display: block;
@@ -139,7 +146,6 @@ button:focus-visible { outline: 1px solid var(--text); outline-offset: 2px; }
 .answer.unanswerable { font-weight: 400; font-style: italic; }
 
 #sources { list-style: none; }
-#sources li { padding: 2px 0; }
 #sources a {
   color: var(--text);
   text-decoration: underline;
