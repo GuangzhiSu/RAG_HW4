@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn data/questions_draft.json into the HW1 task-corpus schema and split it.
+"""Turn data/questions/questions_draft.json into the HW1 task-corpus schema and split it.
 
 For every question, each evidence entry names a corpus document (title) and an
 anchor phrase. The gold context is the paragraph (line) of that document that
@@ -9,17 +9,17 @@ occurrence nearest the anchor, if it appears more than once) and
 context_index is the position of that context in the list.
 
 Checks (the script exits with an error if any fails):
-  * every evidence title exists in data/corpus.csv and its anchor is found
+  * every evidence title exists in data/corpus/corpus.csv and its anchor is found
   * every answer appears verbatim in its context
   * answerable questions have >= 1 answer; unanswerable questions have none
     and at least one near-miss evidence title
   * ids are unique and types are valid
 
-Output: data/questions_dev.jsonl and data/questions_test.jsonl, a 50/50 split
+Output: data/questions/questions_dev.jsonl and questions_test.jsonl, a 50/50 split
 stratified by type (fixed seed).
 
 Usage:
-    python data/build_questions.py
+    python data/questions/build_questions.py
 """
 
 from __future__ import annotations
@@ -31,7 +31,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent
+QUESTIONS_DIR = Path(__file__).resolve().parent
+CORPUS_CSV = QUESTIONS_DIR.parent / "corpus" / "corpus.csv"
 TYPES = ("factoid", "complex", "multi_hop", "unanswerable")
 SEED = 697
 
@@ -137,12 +138,12 @@ def write_jsonl(path: Path, rows: list[dict]):
 
 
 def main():
-    corpus = load_corpus(DATA_DIR / "corpus.csv")
-    draft = json.loads((DATA_DIR / "questions_draft.json").read_text(encoding="utf-8"))
+    corpus = load_corpus(CORPUS_CSV)
+    draft = json.loads((QUESTIONS_DIR / "questions_draft.json").read_text(encoding="utf-8"))
     rows = build(draft, corpus)
     dev, test = split(rows)
-    write_jsonl(DATA_DIR / "questions_dev.jsonl", dev)
-    write_jsonl(DATA_DIR / "questions_test.jsonl", test)
+    write_jsonl(QUESTIONS_DIR / "questions_dev.jsonl", dev)
+    write_jsonl(QUESTIONS_DIR / "questions_test.jsonl", test)
     for name, part in (("dev", dev), ("test", test)):
         counts = {t: sum(r["type"] == t for r in part) for t in TYPES}
         print(f"{name}: {len(part)} questions {counts}")

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the Anna Julia Cooper context-document corpus.
 
-Output: data/corpus.csv with columns title, pageid, text (same schema as
-bbasavar/wiki-corpus-v1), plus data/sources.csv, a manifest with the source
+Output: data/corpus/corpus.csv with columns title, pageid, text (same schema as
+bbasavar/wiki-corpus-v1), plus data/corpus/sources.csv, a manifest with the source
 URL, license and quality flags of every document.
 
 Sources
@@ -20,7 +20,7 @@ Politeness / terms
   against the host's robots.txt before it is fetched.
 * Requests are sequential, at most one every --delay seconds (default 1.5s),
   with exponential backoff on HTTP 429/5xx and respect for Retry-After.
-* Raw HTML is cached in data/raw/, so reruns do not hit the sites again
+* Raw HTML is cached in data/corpus/raw/, so reruns do not hit the sites again
   (use --refresh to refetch).
 * Wikipedia text is CC BY-SA 4.0; the manifest records the URL of every
   page so the dataset card can attribute it.
@@ -33,9 +33,9 @@ avoid collisions. Titles of Wikisource documents end in " (Wikisource)".
 
 Usage
 -----
-    python data/crawl_cooper.py                 # crawl + write data/corpus.csv
-    python data/crawl_cooper.py --max-linked 80 # cap the 1-hop Wikipedia links
-    python data/crawl_cooper.py --skip-llm-flagged
+    python data/corpus/crawl_cooper.py                 # crawl + write data/corpus/corpus.csv
+    python data/corpus/crawl_cooper.py --max-linked 80 # cap the 1-hop Wikipedia links
+    python data/corpus/crawl_cooper.py --skip-llm-flagged
 """
 
 from __future__ import annotations
