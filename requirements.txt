@@ -1,3 +1,5 @@
 requests
 beautifulsoup4
 sentence-transformers  # data/questions/check_duplicates.py
+fastapi
+uvicorn

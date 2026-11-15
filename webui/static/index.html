@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask about Anna Julia Cooper</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Ask about Anna Julia Cooper</h1>
+      <p class="lede">Questions are answered by a retrieval-augmented system over a corpus of Wikipedia articles and the text of <cite>A Voice from the South</cite> (1892). If the corpus does not support an answer, the system says <em>unanswerable</em>.</p>
+    </header>
+
+    <form id="ask" autocomplete="off">
+      <label for="question">Your question</label>
+      <div class="row">
+        <input id="question" name="question" type="text" maxlength="1000" required
+               placeholder="e.g. Where was Anna Julia Cooper born?">
+        <button id="submit" type="submit">Ask</button>
+      </div>
+    </form>
+
+    <div class="examples" aria-label="Example questions">
+      <span>Try:</span>
+      <button type="button" class="example">When did Anna Julia Cooper earn her doctorate?</button>
+      <button type="button" class="example">What is A Voice from the South about?</button>
+      <button type="button" class="example">What did Cooper eat for breakfast on June 3, 1921?</button>
+    </div>
+
+    <section id="result" class="card" hidden aria-live="polite">
+      <div class="label">Answer</div>
+      <p id="answer" class="answer"></p>
+      <div id="sources-block">
+        <div class="label">Sources</div>
+        <ul id="sources"></ul>
+      </div>
+      <p id="meta" class="meta"></p>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+
+    <footer>
+      API: <code>GET /answer?question=…</code> returns <code>{"answer_candidate", "sources"}</code>.
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
