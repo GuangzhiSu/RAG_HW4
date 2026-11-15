@@ -11,13 +11,7 @@ configs:
 - config_name: default
   data_files:
   - split: train
-    path: corpus.csv
-- config_name: questions
-  data_files:
-  - split: dev
-    path: questions_dev.jsonl
-  - split: test
-    path: questions_test.jsonl
+    path: corpus/corpus.csv
 ---
 
 # Anna Julia Cooper QA Corpus
@@ -37,20 +31,26 @@ corpus = load_dataset("<username>/<corpusname>", split="train")
 # corpus[i] -> {"title": ..., "pageid": ..., "text": ...}
 by_title = {row["title"]: row for row in corpus}
 
-questions = load_dataset("<username>/<corpusname>", "questions")
+repo = "hf://datasets/<username>/<corpusname>"
+questions = load_dataset("json", data_files={
+    "dev": f"{repo}/questions/questions_dev.jsonl",
+    "test": f"{repo}/questions/questions_test.jsonl",
+})
 dev, test = questions["dev"], questions["test"]
 ```
+
+The repository has a single config, the corpus. The `datasets` library reads every file in a repository with one format, so the JSONL question files are loaded with the `json` builder rather than as a second config.
 
 ## Files
 
 | File | Rows | Contents |
 |---|---|---|
-| `corpus.csv` | 134 | Context documents: `title`, `pageid`, `text` (same schema as [bbasavar/wiki-corpus-v1](https://huggingface.co/datasets/bbasavar/wiki-corpus-v1)) |
-| `questions_dev.jsonl` | 20 | Dev questions, 5 of each type |
-| `questions_test.jsonl` | 20 | Test questions, 5 of each type |
-| `sources.csv` | 134 | Per-document manifest: source, URL, license, retrieval date, length, flags |
+| `corpus/corpus.csv` | 134 | Context documents: `title`, `pageid`, `text` (same schema as [bbasavar/wiki-corpus-v1](https://huggingface.co/datasets/bbasavar/wiki-corpus-v1)) |
+| `corpus/sources.csv` | 134 | Per-document manifest: source, URL, license, retrieval date, length, flags |
+| `questions/questions_dev.jsonl` | 20 | Dev questions, 5 of each type |
+| `questions/questions_test.jsonl` | 20 | Test questions, 5 of each type |
 
-In the GitHub repository these files live in `data/corpus/` and `data/questions/`. Upload them to the root of the Hugging Face dataset repository so the paths above match.
+Paths are relative to this card. The Hugging Face dataset repository uses the same layout as `data/` in the GitHub repository: upload this `README.md` together with the `corpus/` and `questions/` folders. Leave out the `corpus/raw/` HTML cache.
 
 ## Context corpus
 
