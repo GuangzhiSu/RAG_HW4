@@ -9,7 +9,7 @@
   --text: #111111;
   --line: #e5e5e5;
   --error: #b00020;
-  --name: #4a1d7a;   /* dark purple, used only for the name in the title */
+  --name: #4d1821;   /* iPhone 18 Pro "Burgundy", used only for the name in the title */
   color-scheme: light dark;
 }
 
@@ -19,7 +19,7 @@
     --text: #ededed;
     --line: #2a2a2a;
     --error: #ff6b6b;
-    --name: #c9a8f0; /* lighter purple so the name stays readable on dark */
+    --name: #d98ba0; /* lighter tint of the same burgundy so it stays readable on dark */
   }
 }
 
