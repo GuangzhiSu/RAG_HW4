@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """Turn data/questions/questions_draft.json into the HW1 task-corpus schema and split it.
 
+The schema follows the HW1 spec (docs: hw1_spec.md, hw4_spec.md):
+
+  * context_index is 1-indexed: context[context_index[i] - 1] contains
+    answers.text[i] at answers.answer_start[i]. (HW1: "You may treat it like a
+    1-indexed list", and its example uses [1].)
+  * multi-hop questions list every hop's context in "context"/"title", and
+    context_index points only at the context with the final answer.
+  * unanswerable questions have answers.text = [""], answer_start = [-1] and
+    context = the near-miss passage that makes the question look answerable;
+    their context_index is [1] (the spec leaves it unspecified).
+
 For every question, each evidence entry names a corpus document (title) and an
 anchor phrase. The gold context is the paragraph (line) of that document that
 contains the anchor. Each gold answer must appear verbatim in the context of
@@ -33,6 +44,7 @@ from pathlib import Path
 
 QUESTIONS_DIR = Path(__file__).resolve().parent
 CORPUS_CSV = QUESTIONS_DIR.parent / "corpus" / "corpus.csv"
+INDEX_BASE = 1  # context_index is 1-indexed, as in the HW1 example
 TYPES = ("factoid", "complex", "multi_hop", "unanswerable")
 SEED = 697
 
@@ -89,7 +101,7 @@ def build(draft: list[dict], corpus: dict[str, str]) -> list[dict]:
             if hit is None:
                 errors.append(f"{qid}: answer {ans['text']!r} not verbatim in context of {ans['title']!r}")
                 continue
-            idxs.append(hit[0])
+            idxs.append(hit[0] + INDEX_BASE)
             starts.append(hit[1])
             texts.append(ans["text"])
 
@@ -98,8 +110,11 @@ def build(draft: list[dict], corpus: dict[str, str]) -> list[dict]:
                 errors.append(f"{qid}: unanswerable question has answers")
             if not titles:
                 errors.append(f"{qid}: unanswerable question needs a near-miss title")
+            starts, texts, idxs = [-1], [""], [INDEX_BASE]
         elif not texts:
             errors.append(f"{qid}: answerable question has no valid answer")
+        if q["type"] == "multi_hop" and len(set(titles)) < 2:
+            errors.append(f"{qid}: multi_hop question needs >= 2 articles")
 
         out.append({
             "answers": {"answer_start": starts, "text": texts, "context_index": idxs},
@@ -110,10 +125,42 @@ def build(draft: list[dict], corpus: dict[str, str]) -> list[dict]:
             "type": q["type"],
         })
 
+    for row in out:
+        errors += validate_row(row)
     if errors:
         print("Validation failed:", *errors, sep="\n  ", file=sys.stderr)
         sys.exit(1)
     return out
+
+
+def validate_row(r: dict) -> list[str]:
+    """Independent check of one output row against the HW1 schema."""
+    errs, qid = [], r.get("id")
+    keys = {"answers", "context", "id", "question", "title", "type"}
+    if set(r) != keys:
+        return [f"{qid}: keys {sorted(r)} != {sorted(keys)}"]
+    a = r["answers"]
+    if set(a) != {"answer_start", "text", "context_index"}:
+        return [f"{qid}: bad answers keys {sorted(a)}"]
+    if not (len(a["answer_start"]) == len(a["text"]) == len(a["context_index"]) >= 1):
+        errs.append(f"{qid}: answers lists differ in length or are empty")
+    if len(r["context"]) != len(r["title"]) or not r["context"]:
+        errs.append(f"{qid}: context and title lists differ in length or are empty")
+    if not all(isinstance(x, str) and x for x in r["context"] + r["title"] + [r["question"], r["id"]]):
+        errs.append(f"{qid}: empty or non-string field")
+    for start, text, ci in zip(a["answer_start"], a["text"], a["context_index"]):
+        if not (isinstance(start, int) and isinstance(ci, int)):
+            errs.append(f"{qid}: answer_start/context_index must be ints")
+            continue
+        if not 1 <= ci <= len(r["context"]):
+            errs.append(f"{qid}: context_index {ci} out of range")
+            continue
+        if r["type"] == "unanswerable":
+            if (start, text) != (-1, ""):
+                errs.append(f"{qid}: unanswerable must have text '' and answer_start -1")
+        elif r["context"][ci - 1][start:start + len(text)] != text:
+            errs.append(f"{qid}: context[{ci}][{start}:] does not start with {text!r}")
+    return errs
 
 
 def split(rows: list[dict]) -> tuple[list[dict], list[dict]]:
