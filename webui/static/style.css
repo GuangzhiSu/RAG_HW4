@@ -9,7 +9,7 @@
   --text: #111111;
   --line: #e5e5e5;
   --error: #b00020;
-  --name: #691d7a;   /* reddish dark purple, used only for the name in the title */
+  --name: #561559;   /* reddish dark purple, used only for the name in the title */
   color-scheme: light dark;
 }
 
@@ -19,7 +19,7 @@
     --text: #ededed;
     --line: #2a2a2a;
     --error: #ff6b6b;
-    --name: #e1a8f0; /* lighter tint of the same purple so it stays readable on dark */
+    --name: #eba8f0; /* lighter tint of the same purple so it stays readable on dark */
   }
 }
 
