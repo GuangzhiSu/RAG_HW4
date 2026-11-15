@@ -1,0 +1,212 @@
+[
+  {"id": "f01", "type": "factoid",
+   "question": "Which clergyman offered Anna Julia Cooper a scholarship to help pay her expenses at Saint Augustine's Normal School?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "offered Cooper a scholarship"}],
+   "answers": [{"text": "J. Brinton", "title": "Anna J. Cooper"}]},
+
+  {"id": "f02", "type": "factoid",
+   "question": "In A Voice from the South, what woman's culture club does Cooper say takes its name from the first letters of the words wives, mothers, daughters, and sisters?",
+   "evidence": [{"title": "A Voice from the South/Woman vs. The Indian (Wikisource)", "anchor": "being interpreted for the uninitiated"}],
+   "answers": [{"text": "Wimodaughsis", "title": "A Voice from the South/Woman vs. The Indian (Wikisource)"}]},
+
+  {"id": "f03", "type": "factoid",
+   "question": "Which Medal of Honor recipient taught at M Street High School, where Anna J. Cooper served as principal?",
+   "evidence": [{"title": "M Street High School", "anchor": "a recipient of the Medal of Honor"}],
+   "answers": [{"text": "Christian Fleetwood", "title": "M Street High School"}]},
+
+  {"id": "f04", "type": "factoid",
+   "question": "How much money did Congress appropriate in 1890 to build a permanent home for the high school Anna J. Cooper later led?",
+   "evidence": [{"title": "M Street High School", "anchor": "Congress appropriated"}],
+   "answers": [{"text": "$112,000", "title": "M Street High School"}]},
+
+  {"id": "f05", "type": "factoid",
+   "question": "In which London building was the 1900 First Pan-African Conference, attended by Anna Julia Cooper, held?",
+   "evidence": [{"title": "First Pan-African Conference", "anchor": "Organized primarily by the Trinidadian barrister"}],
+   "answers": [{"text": "Westminster Town Hall", "title": "First Pan-African Conference"},
+               {"text": "Caxton Hall", "title": "First Pan-African Conference"}]},
+
+  {"id": "f06", "type": "factoid",
+   "question": "How many organizations made up the Colored Women's League coalition that Anna J. Cooper helped found?",
+   "evidence": [{"title": "Colored Women's League", "anchor": "was a coalition of 113 organizations"}],
+   "answers": [{"text": "113", "title": "Colored Women's League"}]},
+
+  {"id": "f07", "type": "factoid",
+   "question": "What was the Latin motto of Frelinghuysen University, the school Anna J. Cooper later led?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "Motto:"}],
+   "answers": [{"text": "Sic Itur Ad Astra", "title": "Frelinghuysen University"}]},
+
+  {"id": "f08", "type": "factoid",
+   "question": "On which pages of the 2016 United States passport does the Anna Julia Cooper quotation appear?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "of the 2016 United States passport"}],
+   "answers": [{"text": "24 and 25", "title": "Anna J. Cooper"}]},
+
+  {"id": "f09", "type": "factoid",
+   "question": "What was the denomination of the 2009 First-Class commemorative stamp honoring Anna Julia Cooper?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "First-Class commemorative stamp"}],
+   "answers": [{"text": "44-cent", "title": "Anna J. Cooper"}]},
+
+  {"id": "f10", "type": "factoid",
+   "question": "What was the title of the paper Anna J. Cooper read at the First Pan-African Conference in London in 1900?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "reads paper titled \"The Negro Problem in America\""}],
+   "answers": [{"text": "The Negro Problem in America", "title": "Anna J. Cooper"}]},
+
+  {"id": "c01", "type": "complex",
+   "question": "Which of Anna Julia Cooper's Oberlin classmates earned her M.A. in the same year as Cooper, making the two of them among the first black women to earn a master's degree?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "who received her M.A. in the same year"}],
+   "answers": [{"text": "Mary Church Terrell", "title": "Anna J. Cooper"}]},
+
+  {"id": "c02", "type": "complex",
+   "question": "Before it merged with the Bible Educational Association branch in 1917 to form Frelinghuysen University, what was the school started by Jesse and Rosetta Lawson called?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "began the Interdenominational Bible College"}],
+   "answers": [{"text": "Interdenominational Bible College", "title": "Frelinghuysen University"}]},
+
+  {"id": "c03", "type": "complex",
+   "question": "After Frelinghuysen University's property was foreclosed on in 1931, where did Anna J. Cooper begin hosting its classes?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "that property was foreclosed on in 1931"}],
+   "answers": [{"text": "her home", "title": "Frelinghuysen University"}]},
+
+  {"id": "c04", "type": "complex",
+   "question": "In 1952 the former M Street High School building was renamed after a principal and school board member of the black school system from 1914 to 1945. What name did it receive?",
+   "evidence": [{"title": "M Street High School", "anchor": "In 1952 it was renamed again"}],
+   "answers": [{"text": "Leon L. Perry Middle School", "title": "M Street High School"}]},
+
+  {"id": "c05", "type": "complex",
+   "question": "During her 1900 European tour, where did Anna Julia Cooper go to see the Passion Play after spending a week at the Paris Exposition?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "to see the Passion Play"}],
+   "answers": [{"text": "Oberammergau", "title": "Anna J. Cooper"}]},
+
+  {"id": "c06", "type": "complex",
+   "question": "Anna Julia Cooper's Columbia University thesis was not accepted when she transferred her credits to the University of Paris. What work was that thesis an edition of?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "did not accept her Columbia thesis"}],
+   "answers": [{"text": "Le Pèlerinage de Charlemagne", "title": "Anna J. Cooper"}]},
+
+  {"id": "c07", "type": "complex",
+   "question": "Why was Anna Julia Cooper forced to interrupt her doctoral studies at Columbia University in 1915?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "forced to interrupt her studies in 1915"}],
+   "answers": [{"text": "she adopted her late half-brother's five children", "title": "Anna J. Cooper"}]},
+
+  {"id": "c08", "type": "complex",
+   "question": "The Colored Women's League merged with which other organization in 1896 to form the National Association of Colored Women?",
+   "evidence": [{"title": "Colored Women's League", "anchor": "In 1896, the Colored Women's League and the Federation"}],
+   "answers": [{"text": "Federation of Afro-American Women", "title": "Colored Women's League"}]},
+
+  {"id": "c09", "type": "complex",
+   "question": "Who was the youngest delegate at the 1900 London conference where Anna Julia Cooper joined the executive committee?",
+   "evidence": [{"title": "First Pan-African Conference", "anchor": "(the youngest delegate)"}],
+   "answers": [{"text": "Samuel Coleridge-Taylor", "title": "First Pan-African Conference"}]},
+
+  {"id": "c10", "type": "complex",
+   "question": "Cooper's essay \"Woman vs. The Indian\" takes its title from a paper by another speaker. Who gave that paper?",
+   "evidence": [{"title": "A Voice from the South/Woman vs. The Indian (Wikisource)", "anchor": "bearing the above title"}],
+   "answers": [{"text": "Anna Shaw", "title": "A Voice from the South/Woman vs. The Indian (Wikisource)"}]},
+
+  {"id": "m01", "type": "multi_hop",
+   "question": "Frelinghuysen University, which Anna J. Cooper later led, had a school named after Cooper's mother. What was that school called?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "She and her mother, Hannah Stanley Haywood"},
+                {"title": "Frelinghuysen University", "anchor": "the Hannah Stanley Opportunity School"}],
+   "answers": [{"text": "Hannah Stanley Opportunity School", "title": "Frelinghuysen University"}]},
+
+  {"id": "m02", "type": "multi_hop",
+   "question": "Who designed the building of the Washington high school where Anna J. Cooper became principal in 1901 or 1902?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "becoming principal in 1901 or 1902"},
+                {"title": "M Street High School", "anchor": "designed by Thomas Entwistle"}],
+   "answers": [{"text": "Thomas Entwistle", "title": "M Street High School"}]},
+
+  {"id": "m03", "type": "multi_hop",
+   "question": "In what year was the first president of the Colored Women's League, the club Cooper co-founded in 1892, born?",
+   "evidence": [{"title": "Colored Women's League", "anchor": "Helen Appo Cook was elected the first president"},
+                {"title": "Helen Appo Cook", "anchor": "Helen Appo Cook (July 21, 1837"}],
+   "answers": [{"text": "1837", "title": "Helen Appo Cook"}]},
+
+  {"id": "m04", "type": "multi_hop",
+   "question": "Anna J. Cooper succeeded the co-founder of Frelinghuysen University as its president. In what town was her predecessor born?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "elected to succeed Jesse Lawson"},
+                {"title": "Jesse Lawson", "anchor": "Jesse Lawson was born in Nanjemoy"}],
+   "answers": [{"text": "Nanjemoy", "title": "Jesse Lawson"}]},
+
+  {"id": "m05", "type": "multi_hop",
+   "question": "What subjects did the wife of Anna J. Cooper's predecessor as president of Frelinghuysen University teach there?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "elected to succeed Jesse Lawson"},
+                {"title": "Rosetta Lawson", "anchor": "where she taught anatomy and physiology"}],
+   "answers": [{"text": "anatomy and physiology", "title": "Rosetta Lawson"}]},
+
+  {"id": "m06", "type": "multi_hop",
+   "question": "Anna Julia Cooper dedicated A Voice from the South to a bishop. In which state's House of Representatives did that bishop serve?",
+   "evidence": [{"title": "A Voice from the South (Wikisource)", "anchor": "Bishop Benjamin William Arnett"},
+                {"title": "Benjamin W. Arnett", "anchor": "member of the Ohio House of Representatives"}],
+   "answers": [{"text": "Ohio", "title": "Benjamin W. Arnett"}]},
+
+  {"id": "m07", "type": "multi_hop",
+   "question": "Which school did the artist who painted the portrait on Anna Julia Cooper's 2009 commemorative stamp attend?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "showcases a portrait painted by Kadir Nelson"},
+                {"title": "Kadir Nelson", "anchor": "Education: Pratt Institute"}],
+   "answers": [{"text": "Pratt Institute", "title": "Kadir Nelson"}]},
+
+  {"id": "m08", "type": "multi_hop",
+   "question": "In what town was the playwright of Tempestuous Elements, the play dramatizing Anna Julia Cooper's career, born?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "a play by Kia Corthron"},
+                {"title": "Kia Corthron", "anchor": "Kia Corthron was born on May 13, 1961"}],
+   "answers": [{"text": "Cumberland, Maryland", "title": "Kia Corthron"}]},
+
+  {"id": "m09", "type": "multi_hop",
+   "question": "Anna Julia Cooper and her mother were enslaved by a son of North Carolina's longest-serving state Treasurer. In which county was that Treasurer born?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "North Carolina's longest-serving state Treasurer John Haywood"},
+                {"title": "John Haywood (politician)", "anchor": "John Haywood (born Edgecombe County"}],
+   "answers": [{"text": "Edgecombe County", "title": "John Haywood (politician)"}]},
+
+  {"id": "m10", "type": "multi_hop",
+   "question": "In 1893 Anna J. Cooper co-hosted Ida B. Wells with Frederick Douglass and a Washington educator. From which business college did that educator graduate in 1883?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "Co-hosts anti-lynching activist Ida B. Wells"},
+                {"title": "Lucy Ella Moten", "anchor": "In 1883 she graduated from Spencerian Business College"}],
+   "answers": [{"text": "Spencerian Business College", "title": "Lucy Ella Moten"}]},
+
+  {"id": "u01", "type": "unanswerable",
+   "question": "What did Anna Julia Cooper eat for breakfast on the morning she defended her doctoral thesis in Paris in 1925?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "Cooper defended her thesis"}],
+   "answers": []},
+
+  {"id": "u02", "type": "unanswerable",
+   "question": "Which piano piece was Anna Julia Cooper's personal favorite to practice while she was a student at Oberlin College?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "unable to take as many classes in piano"}],
+   "answers": []},
+
+  {"id": "u03", "type": "unanswerable",
+   "question": "What color dress did Anna Julia Cooper wear when she delivered her address at the 1893 World's Congress of Representative Women?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "delivered the opening address at the World's Congress"}],
+   "answers": []},
+
+  {"id": "u04", "type": "unanswerable",
+   "question": "What did Anna J. Cooper and Helen Appo Cook talk about over tea the evening before the Colored Women's League was formed?",
+   "evidence": [{"title": "Colored Women's League", "anchor": "In June 1892, a group of several prominent black women"}],
+   "answers": []},
+
+  {"id": "u05", "type": "unanswerable",
+   "question": "How many hours did Anna Julia Cooper sleep the night before the First Pan-African Conference opened in London?",
+   "evidence": [{"title": "First Pan-African Conference", "anchor": "Organized primarily by the Trinidadian barrister"}],
+   "answers": []},
+
+  {"id": "u06", "type": "unanswerable",
+   "question": "What was the weather in Raleigh on the day nine-year-old Anna Haywood started classes at Saint Augustine's in 1868?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "In 1868, when Cooper was nine years old"}],
+   "answers": []},
+
+  {"id": "u07", "type": "unanswerable",
+   "question": "Which song did Anna J. Cooper hum on her walk to M Street High School on her first day as principal?",
+   "evidence": [{"title": "M Street High School", "anchor": "Principals at the school included"}],
+   "answers": []},
+
+  {"id": "u08", "type": "unanswerable",
+   "question": "What did Anna J. Cooper order for dinner on the night Frelinghuysen University's building was foreclosed on in 1931?",
+   "evidence": [{"title": "Frelinghuysen University", "anchor": "that property was foreclosed on in 1931"}],
+   "answers": []},
+
+  {"id": "u09", "type": "unanswerable",
+   "question": "How many cups of coffee did Anna Julia Cooper drink while writing her essay \"The Higher Education of Woman\"?",
+   "evidence": [{"title": "Anna J. Cooper", "anchor": "she published an essay on \"Higher Education of Women\""}],
+   "answers": []},
+
+  {"id": "u10", "type": "unanswerable",
+   "question": "What did Kadir Nelson eat for lunch on the day he finished painting his portrait of Anna Julia Cooper for the 2009 stamp?",
+   "evidence": [{"title": "Kadir Nelson", "anchor": "Kadir Nelson (May 15, 1974)"}],
+   "answers": []}
+]
